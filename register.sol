@@ -1,4 +1,4 @@
-pragma solidity ^0.4.25;
+pragma solidity ^0.4.25<0.8.0;
 
 contract Ownable {
 
@@ -38,7 +38,7 @@ contract Register is Ownable {
   }
 
   function Register () public {
-      address _tokenAddr = TDvjpjzd24K8HpMV4mERWiUvr4GcsRAHrQ; 
+      address _tokenAddr = "TDvjpjzd24K8HpMV4mERWiUvr4GcsRAHrQ"; 
       token = Token(_tokenAddr);
   }
 
