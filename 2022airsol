@@ -319,12 +319,10 @@ function _bulksendTRC10(trcToken id, address[] _to, uint256[] _values)  internal
     }
 
 
-    function bulksendToken(IERC20 _token, address[] _to, uint256[] _values, bytes32 _uniqueId) payable public {
-        if(checkTxExist(_uniqueId)){
-            if (msg.value > 0)
+    function bulksendToken(IERC20 _token, address[] _to, uint256[] _values) payable public {
+        if (msg.value > 0)
                 require(msg.sender.send(msg.value));//refund the tx fee to msg send if the tx already exists
-        }else{
-            addTxRecord(_uniqueId);
+        else{
          _bulksendToken(_token, _to, _values);
         }
     }
